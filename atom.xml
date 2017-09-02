@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liujiacai.net/"/>
-  <updated>2017-09-02T08:04:28.000Z</updated>
+  <updated>2017-09-02T08:10:32.000Z</updated>
   <id>http://liujiacai.net/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>由浅入深学习 Lisp 宏（第一篇）</title>
+    <title>由浅入深学习 Lisp 宏之理论篇</title>
     <link href="http://liujiacai.net/blog/2017/08/31/master-macro-understand-symbol/"/>
     <id>http://liujiacai.net/blog/2017/08/31/master-macro-understand-symbol/</id>
     <published>2017-08-31T14:17:52.000Z</published>
-    <updated>2017-09-02T08:04:28.000Z</updated>
+    <updated>2017-09-02T08:10:32.000Z</updated>
     
     <content type="html"><![CDATA[<p>宏（macro）是 Lisp 语言中最重要的武器，它可以自动生成运行时的代码。宏也是编写领域特定语言（DSL）的利器，可以在不改动语言本身的基础上，增加新的程序构造体，这在其他语言中是不可能。比如，现在比较流行的同步方式写异步代码的 async/await，在非 Lisp 语言需要语言本身支持，但是在 Lisp 里面可以通过几个宏来解决，可以参考：<a href="https://github.com/clojure/core.async" target="_blank" rel="external">core.async</a>。</p>
 <blockquote>
@@ -79,6 +79,8 @@
       &lt;p&gt;宏（macro）是 Lisp 语言中最重要的武器，它可以自动生成运行时的代码。宏也是编写领域特定语言（DSL）的利器，可以在不改动语言本身的基础上，增加新的程序构造体，这在其他语言中是不可能。比如，现在比较流行的同步方式写异步代码的 async/await，在非 Lisp 
     
     </summary>
+    
+      <category term="编程语言" scheme="http://liujiacai.net/categories/PL/"/>
     
     
       <category term="Clojure" scheme="http://liujiacai.net/tags/Clojure/"/>
