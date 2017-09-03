@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liujiacai.net/"/>
-  <updated>2017-09-02T08:28:34.000Z</updated>
+  <updated>2017-09-03T10:27:46.000Z</updated>
   <id>http://liujiacai.net/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://liujiacai.net/blog/2017/08/31/master-macro-understand-symbol/"/>
     <id>http://liujiacai.net/blog/2017/08/31/master-macro-understand-symbol/</id>
     <published>2017-08-31T14:17:52.000Z</published>
-    <updated>2017-09-02T08:28:34.000Z</updated>
+    <updated>2017-09-03T10:27:46.000Z</updated>
     
     <content type="html"><![CDATA[<p>宏（macro）是 Lisp 语言中最重要的武器，它可以自动生成运行时的代码。宏也是编写领域特定语言（DSL）的利器，可以在不改动语言本身的基础上，增加新的程序构造体，这在其他语言中是不可能。比如，现在比较流行的同步方式写异步代码的 async/await，在非 Lisp 语言需要语言本身支持，但是在 Lisp 里面可以通过几个宏来解决，可以参考：<a href="https://github.com/clojure/core.async" target="_blank" rel="external">core.async</a>。</p>
 <blockquote>
@@ -37,11 +37,12 @@
 <blockquote>
 <p>Symbols are identifiers that are normally used to refer to something else.</p>
 </blockquote>
-<p>可以说 symbol 就是一些标识符，用来代指其他东西，和英文中 he/she/it 等「代词」的作用差不多。<br>现在编程使用的都是高级语言，其语言构造体（language’s constructor）是由一些关键字与用户自定义变量组成，而这些都是 symbol，比如下面一个 Hello World 的示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">(defn hello [greeting]</div><div class="line">  (println &quot;Hello &quot; greeting))</div><div class="line"></div><div class="line">(hello &quot;world&quot;)</div></pre></td></tr></table></figure></p>
+<p>可以说 symbol 就是一些标识符，用来代指其他东西，和英文中 he/she/it 等「代词」的作用差不多。<br>现在编程使用的都是高级语言，其语言构造体（language’s constructs）是由一些关键字与用户自定义变量组成，而这些都是 symbol，比如下面一个 Hello World 的示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">(defn hello [greeting]</div><div class="line">  (println &quot;Hello &quot; greeting))</div><div class="line"></div><div class="line">(hello &quot;world&quot;)</div></pre></td></tr></table></figure></p>
 <p>上面的 defn, hello, greeting, println 都是 symbol，用来指向其他数据类型，在进行求值（eval）时，Compiler 会计算出相应值。Clojure 里面提供了 def 这个<a href="https://clojure.org/reference/special_forms" target="_blank" rel="external">special form</a>来建立 symbol 到其他值的映射关系。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">user&gt; (def cat &quot;Tom&quot;)</div><div class="line">#&apos;user/cat</div></pre></td></tr></table></figure></p>
 <p>简单来说上面这一句把 symbol 执行了字符串<code>Tom</code>，但是由于 Clojure 里面为了实现其动态特性，真实的情况稍微复杂一些，见下图：<br><img src="https://img.alicdn.com/imgextra/i4/581166664/TB2vBerXioaPuJjSsplXXbg7XXa_!!581166664.png" alt=""></p>
 <p>Var 是Clojure里面提供的<a href="http://clojure-doc.org/articles/language/concurrency_and_parallelism.html#clojure-reference-types" target="_blank" rel="external">四种引用类型</a>中最常用的，支持动态作用域以及 thread-local 值。动态作用域是指函数内的自由变量的值是在运行时确定的，这里不清楚的可以参考我的另一篇文章<a href="/blog/2016/05/28/scope-closure/">《编程语言中的变量作用域与闭包》</a>，这里不在赘述。</p>
-<p>继续回到上面的图，def 会把 cat 这个 symbol 指向同名的 var，同时把 var 指向字符串 Tom（叫做 root binding），可以用<code>resolve</code>来查找一个symbol 到 var 的映射关系：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">user&gt; (resolve &apos;cat)</div><div class="line">#&apos;user/cat</div></pre></td></tr></table></figure></p>
+<p>继续回到上面的图，def 会把 cat 这个 symbol 指向同名的 var，同时把 var 指向字符串 Tom（叫做 root binding）。symbol 到 var 的映射关系保存在每个 namespace 中，可以用<code>resolve</code>来查询这个映射关系：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">user&gt; (resolve &apos;cat)</div><div class="line">#&apos;user/cat</div></pre></td></tr></table></figure></p>
+<p>最后一点需要注意的是，symbol 在 var 的映射关系只有在用 def 定义全局 var 是才具有，使用 let, loop 定义的词法作用域（lexical context）里面的 binding 不算是变量，<a href="https://groups.google.com/forum/#!topic/clojure/PCKzXweeDeY" target="_blank" rel="external">一旦创建后无法修改</a>。可以使用 <code>with-local-vars</code> 宏来定义局部变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">(with-local-vars [x 1 y 2]</div><div class="line">  (var-set x 11)</div><div class="line">  (+ (var-get x) (var-get y)))</div><div class="line"></div><div class="line">;; =&gt; 13</div></pre></td></tr></table></figure></p>
 <h3 id="字面量"><a href="#字面量" class="headerlink" title="字面量"></a>字面量</h3><p>由上面介绍我们可以知道，Clojure 编译器在遇到 symbol 时，会对其进行求值，可以用<code>&#39;</code>来表示其字面量</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">user&gt; (def tom &apos;tom)  ;; 这里指向的值为一个 symbol 类型的 tom</div><div class="line">#&apos;user/tom</div><div class="line">user&gt; tom</div><div class="line">tom</div></pre></td></tr></table></figure>
 <p>有一点非常重要，任何两个同名的 symbol 是不相等的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">user&gt; (identical? &apos;tom &apos;tom)</div><div class="line">false</div></pre></td></tr></table></figure></p>
@@ -49,8 +50,13 @@
 <blockquote>
 <p>相同名的变量，在不同地方，不同时刻具有不同的值是再正常不过的了。</p>
 </blockquote>
+<p>而且 symbol 可以带有元数据，所以很有可能同名的 symbol 具有不同的元数据。</p>
 <p>最后比较重要的一点，宏传入的参数都是 symbol 字面量，比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">user&gt; (def a 1)</div><div class="line">#&apos;user/a</div><div class="line">user&gt; (defmacro demo-macro [params] (println params))</div><div class="line">#&apos;user/demo-macro</div><div class="line">user&gt; (demo-macro a)</div><div class="line">a</div><div class="line">nil</div></pre></td></tr></table></figure></p>
 <p>可以看到这里打印的是symbol <code>a</code>，而不是数字 1。由于<code>demo-macro</code>什么也没返回，所以在打印出 a 之后输出了 nil。</p>
+<h3 id="keyword"><a href="#keyword" class="headerlink" title="keyword"></a>keyword</h3><p>首先明确一点，这里的 keyword 不是指程序语言里面的关键字，而是一种与 symbol 相近的数据类型，为什么说相近呢？上面介绍了 symbol 是用来指向其他值的符号，keyword 也是这么一种符号，只不过其值指向自身（self-evaluation）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">user&gt; :cat</div><div class="line">:cat</div><div class="line">user&gt; (identical? :cat :cat)</div><div class="line">true</div></pre></td></tr></table></figure></p>
+<p>可以看到，同名的 keyword 是同一对象，因为它的定义就说了，其值指向自身，所以它们是不能带元数据的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">(with-meta :cat &#123;:some-prop true&#125;)   ;; 会报错</div><div class="line">java.lang.ClassCastException: clojure.lang.Keyword cannot be cast to clojure.lang.IObj</div></pre></td></tr></table></figure></p>
+<p>keyword 类型存在的意义，就在于很多时候我们只是像简单区分某些东西，这一点和 Java 里的枚举类型有些相似。keyword 在 Clojure 里面最常用的地方是作为 map 的 key。比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(def student &#123;:name &quot;张三&quot; :birth &quot;2010-10-10&quot; :sex &quot;F&quot;&#125;)</div></pre></td></tr></table></figure></p>
+<p>有些地方也会称 keyword 为“轻量级的 string”。</p>
 <h2 id="宏的本质"><a href="#宏的本质" class="headerlink" title="宏的本质"></a>宏的本质</h2><p>由于 Lisp 采用 s-expression 作为其语法，所以天然具有 code as data 的特点，也就是说 Lisp 程序本身就是一个 Lisp 数据，可以像操作其他数据类型一样来操作程序本身，这其实就是宏做的事情。老牌 Lisp hacker <a href="http://www.paulgraham.com" target="_blank" rel="external">Paul Graham</a> 在黑客与画家一书中有<a href="/blog/2016/12/31/dev-in-clojure/#Why-Lisp">提到</a>：</p>
 <blockquote>
 <p>Lisp 并不严格区分读取期、编译器、运行期。在编译期去运行就是宏，可以用来扩展语言。</p>
@@ -73,6 +79,9 @@
 <p>Paul Graham 「<a href="http://www.paulgraham.com/diff.html" target="_blank" rel="external">What makes Lisp different</a>」</p>
 </blockquote>
 </blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://blog.cognitect.com/blog/2016/9/15/works-on-my-machine-understanding-var-bindings-and-roots" target="_blank" rel="external">WORKS ON MY MACHINE: UNDERSTANDING VAR BINDINGS AND ROOTS</a></li>
+</ul>
 ]]></content>
     
     <summary type="html">
