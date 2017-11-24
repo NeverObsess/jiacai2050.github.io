@@ -37,7 +37,11 @@
 <h2 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h2><h3 id="宏"><a href="#宏" class="headerlink" title="宏"></a><a href="https://clojurescript.org/about/differences#_macros" target="_blank" rel="external">宏</a></h3><p>cljs 里面加载宏的机制有别于 Clojure，一般需要单独把宏定义在一个文件里面，然后在 cljs 里面用<code>(:require-macros [my.macros :as my])</code> 这样的方式去引用，而且宏定义的文件名后缀必须是 clj 或 cljc，不能是 cljs，这一点坑了我好久。。。</p>
 <p>由于宏编译与 cljs 编程在不同的时期，所以如果宏写错了，就需要把 repl 杀掉重启来把新的宏 feed 给 cljs，这点也比较痛苦，因为 repl 的启动速度实在是有些慢。这一点在 Clojure 里面虽然也存在，但是 Clojure 里面一般 repl 开了就不关了，直到电脑重启。</p>
 <p><img src="https://img.alicdn.com/imgextra/i1/581166664/TB2iGyXbvjM8KJjSZFyXXXdzVXa_!!581166664.png" alt="我机器上启动的 repl 列表"></p>
-<h3 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h3><p>Clojure 里面采用 Emacs + Cider 的开发环境非常完美，但是到了 cljs 里面，开发流程没有那么平滑，总是有些磕磕绊绊，也给 cider <a href="https://github.com/clojure-emacs/cider/issues/2099" target="_blank" rel="external">提了个 issue</a>，貌似一直没人理，支持确实不好，不过有了 figwheel，在一定程度上能弥补这个缺陷。</p>
+<h3 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h3><p>Clojure 里面采用 Emacs + Cider 的开发环境非常完美，但是到了 cljs 里面，开发流程没有那么平滑，总是有些磕磕绊绊，也给 cider <a href="https://github.com/clojure-emacs/cider/issues/2099" target="_blank" rel="external">提了个 issue</a>，貌似一直没人理，支持确实不好，不过有了 figwheel，在一定程度上能弥补这个缺陷。在 Emacs 里面配置 repl 可参考：</p>
+<ul>
+<li><a href="https://cider.readthedocs.io/en/latest/up_and_running/#clojurescript-usage" target="_blank" rel="external">https://cider.readthedocs.io/en/latest/up_and_running/#clojurescript-usage</a></li>
+</ul>
+<p>Cider 默认会使用 rhino 作为 repl 求值环境，这个在开发浏览器插件时功能很有限，但是对于查看函数定义还是可以的。可以根据需要换成 figwheel。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>ClojureScript 可以算是 Clojure 语言的一个<a href="https://www.reddit.com/r/Clojure/comments/75apb2/does_clojure_have_a_killer_app/" target="_blank" rel="external">杀手级</a><a href="https://groups.google.com/forum/#!topic/clojure/YCnG3rmOp5w" target="_blank" rel="external">应用</a>，React 使得后端程序员也能快速作出美观实用的界面。ClojureScript + React，用起来不能再开心啦！</p>
 <p>JS 社区里面层出不穷的框架每次都让跃跃欲试的我望而却步，有了 cljs，算是把 Lisp 延伸到了更宽广的“领土”。最近看到这么一句话，与大家分享：</p>
 <blockquote>
