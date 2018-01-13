@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://liujiacai.net/blog/2017/11/22/create-firefox-chrome-extensions-in-clojurescript/</loc>
+    
+    <lastmod>2018-01-13T08:29:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://liujiacai.net/blog/2016/10/31/socket-programming/</loc>
     
     <lastmod>2017-12-24T04:35:51.000Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>http://liujiacai.net/blog/2017/08/31/master-macro-theory/</loc>
     
     <lastmod>2017-12-23T04:27:50.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://liujiacai.net/blog/2017/11/22/create-firefox-chrome-extensions-in-clojurescript/</loc>
-    
-    <lastmod>2017-11-25T08:24:03.000Z</lastmod>
     
   </url>
   
@@ -142,7 +142,7 @@
   </url>
   
   <url>
-    <loc>http://liujiacai.net/blog/2014/06/06/computational-thinking-3/</loc>
+    <loc>http://liujiacai.net/blog/2014/06/06/computational-thinking-1/</loc>
     
     <lastmod>2017-07-04T14:43:37.000Z</lastmod>
     
@@ -150,6 +150,13 @@
   
   <url>
     <loc>http://liujiacai.net/blog/2015/07/11/review-3-month-life-in-youzan/</loc>
+    
+    <lastmod>2017-07-04T14:43:37.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://liujiacai.net/blog/2015/02/01/javascript-oop/</loc>
     
     <lastmod>2017-07-04T14:43:37.000Z</lastmod>
     
@@ -170,13 +177,6 @@
   </url>
   
   <url>
-    <loc>http://liujiacai.net/blog/2015/02/01/javascript-oop/</loc>
-    
-    <lastmod>2017-07-04T14:43:37.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://liujiacai.net/blog/2015/07/18/sicp-chapter1-summary/</loc>
     
     <lastmod>2017-07-04T14:43:37.000Z</lastmod>
@@ -185,13 +185,6 @@
   
   <url>
     <loc>http://liujiacai.net/blog/2015/09/20/sicp-chapter2-summary/</loc>
-    
-    <lastmod>2017-07-04T14:43:37.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://liujiacai.net/blog/2014/08/09/inter-intra-cept-ee-er/</loc>
     
     <lastmod>2017-07-04T14:43:37.000Z</lastmod>
     
@@ -212,14 +205,7 @@
   </url>
   
   <url>
-    <loc>http://liujiacai.net/blog/2015/10/27/sf-hackathon/</loc>
-    
-    <lastmod>2017-07-04T14:43:37.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://liujiacai.net/blog/2015/10/03/first-toy-scheme/</loc>
+    <loc>http://liujiacai.net/blog/2014/05/07/hello-weblog/</loc>
     
     <lastmod>2017-07-04T14:43:37.000Z</lastmod>
     
@@ -233,7 +219,14 @@
   </url>
   
   <url>
-    <loc>http://liujiacai.net/blog/2015/12/26/sicp-chapter3-summary/</loc>
+    <loc>http://liujiacai.net/blog/2014/08/09/inter-intra-cept-ee-er/</loc>
+    
+    <lastmod>2017-07-04T14:43:37.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://liujiacai.net/blog/2015/10/27/sf-hackathon/</loc>
     
     <lastmod>2017-07-04T14:43:37.000Z</lastmod>
     
@@ -247,7 +240,7 @@
   </url>
   
   <url>
-    <loc>http://liujiacai.net/blog/2015/11/20/strings/</loc>
+    <loc>http://liujiacai.net/blog/2015/12/26/sicp-chapter3-summary/</loc>
     
     <lastmod>2017-07-04T14:43:37.000Z</lastmod>
     
@@ -261,14 +254,14 @@
   </url>
   
   <url>
-    <loc>http://liujiacai.net/blog/2014/07/12/order-of-initialization-in-java/</loc>
+    <loc>http://liujiacai.net/blog/2014/05/09/understand-serious-music/</loc>
     
     <lastmod>2017-07-04T14:43:37.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://liujiacai.net/blog/2016/03/26/python-ruby-javascript/</loc>
+    <loc>http://liujiacai.net/blog/2015/10/03/first-toy-scheme/</loc>
     
     <lastmod>2017-07-04T14:43:37.000Z</lastmod>
     
@@ -282,7 +275,7 @@
   </url>
   
   <url>
-    <loc>http://liujiacai.net/blog/2014/05/09/understand-serious-music/</loc>
+    <loc>http://liujiacai.net/blog/2014/06/06/computational-thinking-3/</loc>
     
     <lastmod>2017-07-04T14:43:37.000Z</lastmod>
     
@@ -296,7 +289,35 @@
   </url>
   
   <url>
+    <loc>http://liujiacai.net/blog/2015/11/20/strings/</loc>
+    
+    <lastmod>2017-07-04T14:43:37.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://liujiacai.net/blog/2016/03/26/python-ruby-javascript/</loc>
+    
+    <lastmod>2017-07-04T14:43:37.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://liujiacai.net/blog/2016/11/07/run-2-marathon-in-a-week/</loc>
+    
+    <lastmod>2017-07-04T14:43:37.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://liujiacai.net/blog/2014/09/14/mozilla-history/</loc>
+    
+    <lastmod>2017-07-04T14:43:37.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://liujiacai.net/blog/2017/01/08/review-2016/</loc>
     
     <lastmod>2017-07-04T14:43:37.000Z</lastmod>
     
@@ -310,14 +331,14 @@
   </url>
   
   <url>
-    <loc>http://liujiacai.net/blog/2014/06/06/computational-thinking-1/</loc>
+    <loc>http://liujiacai.net/blog/2014/10/12/lambda-calculus-introduction/</loc>
     
     <lastmod>2017-07-04T14:43:37.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://liujiacai.net/blog/2014/12/29/review-2014/</loc>
+    <loc>http://liujiacai.net/blog/2016/12/31/dev-in-clojure/</loc>
     
     <lastmod>2017-07-04T14:43:37.000Z</lastmod>
     
@@ -338,35 +359,7 @@
   </url>
   
   <url>
-    <loc>http://liujiacai.net/blog/2017/02/09/clojure-compiler-analyze-2/</loc>
-    
-    <lastmod>2017-07-04T14:43:37.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://liujiacai.net/blog/2017/01/08/review-2016/</loc>
-    
-    <lastmod>2017-07-04T14:43:37.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://liujiacai.net/blog/2014/09/14/mozilla-history/</loc>
-    
-    <lastmod>2017-07-04T14:43:37.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://liujiacai.net/blog/2016/12/31/dev-in-clojure/</loc>
-    
-    <lastmod>2017-07-04T14:43:37.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://liujiacai.net/blog/2014/10/12/lambda-calculus-introduction/</loc>
+    <loc>http://liujiacai.net/blog/2014/07/12/order-of-initialization-in-java/</loc>
     
     <lastmod>2017-07-04T14:43:37.000Z</lastmod>
     
@@ -380,7 +373,14 @@
   </url>
   
   <url>
-    <loc>http://liujiacai.net/blog/2014/11/08/secret-of-firefox-prefs/</loc>
+    <loc>http://liujiacai.net/blog/2017/02/09/clojure-compiler-analyze-2/</loc>
+    
+    <lastmod>2017-07-04T14:43:37.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://liujiacai.net/blog/2014/12/29/review-2014/</loc>
     
     <lastmod>2017-07-04T14:43:37.000Z</lastmod>
     
@@ -394,14 +394,7 @@
   </url>
   
   <url>
-    <loc>http://liujiacai.net/blog/2014/05/07/hello-weblog/</loc>
-    
-    <lastmod>2017-07-04T14:43:37.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://liujiacai.net/blogrolls/index.html</loc>
+    <loc>http://liujiacai.net/blog/2014/11/08/secret-of-firefox-prefs/</loc>
     
     <lastmod>2017-07-04T14:43:37.000Z</lastmod>
     
@@ -409,6 +402,13 @@
   
   <url>
     <loc>http://liujiacai.net/about/index.html</loc>
+    
+    <lastmod>2017-07-04T14:43:37.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://liujiacai.net/blogrolls/index.html</loc>
     
     <lastmod>2017-07-04T14:43:37.000Z</lastmod>
     
